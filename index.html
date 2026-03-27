@@ -1,12 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Redirecting...</title>
-<script>
-window.location.href = "https://t.me/silveronline24";
-</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Casino</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: radial-gradient(circle, #000000, #1a1a1a);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Floating coins animation */
+.coins {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.coin {
+  position: absolute;
+  color: gold;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Main container */
+.container {
+  padding: 20px;
+}
+
+h1 {
+  color: gold;
+  font-size: 45px;
+  text-shadow: 0 0 15px gold;
+}
+
+.sub {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.icons {
+  font-size: 70px;
+  margin: 20px 0;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px gold; }
+  to { text-shadow: 0 0 30px orange; }
+}
+
+/* Buttons */
+.btn {
+  display: block;
+  width: 85%;
+  margin: 15px auto;
+  padding: 16px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.telegram {
+  background: linear-gradient(#0088cc, #005f8f);
+}
+
+.whatsapp {
+  background: linear-gradient(#25D366, #1da851);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+
+/* Bonus box */
+.bonus {
+  margin-top: 25px;
+  padding: 15px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  color: gold;
+  font-size: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px gold; }
+  50% { box-shadow: 0 0 20px gold; }
+  100% { box-shadow: 0 0 5px gold; }
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  color: gray;
+}
+</style>
+
 </head>
+
 <body>
-<p>Redirecting...</p>
+
+<!-- Coins -->
+<div class="coins" id="coins"></div>
+
+<div class="container">
+
+<h1>🎰 SILVER CASINO 🎰</h1>
+
+<div class="sub">🔥 Play & Win Daily 🔥</div>
+
+<div class="icons">🎲 🎯 🃏 💰 🎰</div>
+
+<a href="https://t.me/silveronline24" class="btn telegram">
+📲 Join on Telegram
+</a>
+
+<a href="https://wa.me/917347607874" class="btn whatsapp">
+💬 Chat on WhatsApp
+</a>
+
+<div class="bonus">
+🎁 20% Bonus + 5% Every Deposit 💰
+</div>
+
+<div class="footer">
+24/7 Support | Instant Withdraw | Trusted Platform
+</div>
+
+</div>
+
+<script>
+// Create falling coins
+let coinsContainer = document.getElementById("coins");
+
+for (let i = 0; i < 30; i++) {
+  let coin = document.createElement("div");
+  coin.classList.add("coin");
+  coin.innerHTML = "💰";
+  coin.style.left = Math.random() * 100 + "%";
+  coin.style.animationDuration = (3 + Math.random() * 5) + "s";
+  coinsContainer.appendChild(coin);
+}
+</script>
+
 </body>
 </html>
