@@ -3,160 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silver Casino</title>
+<title>Silver Book</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: radial-gradient(circle, #000000, #1a1a1a);
+  background: linear-gradient(135deg,#020617,#0f172a);
   color: white;
+}
+
+/* HEADER */
+header {
+  padding: 15px;
   text-align: center;
-  overflow-x: hidden;
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.6);
 }
 
-/* Floating coins animation */
-.coins {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-.coin {
-  position: absolute;
-  color: gold;
-  font-size: 20px;
-  animation: fall linear infinite;
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-@keyframes fall {
-  0% { transform: translateY(-100px); opacity: 1; }
-  100% { transform: translateY(100vh); opacity: 0; }
-}
+.play { background:#22c55e; }
+.demo { background:#facc15; color:black; }
+.login { background:#3b82f6; }
 
-/* Main container */
-.container {
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 20px;
 }
 
-h1 {
-  color: gold;
-  font-size: 45px;
-  text-shadow: 0 0 15px gold;
-}
-
-.sub {
+.card {
+  background: rgba(255,255,255,0.05);
   margin: 10px;
-  font-size: 18px;
-}
-
-.icons {
-  font-size: 70px;
-  margin: 20px 0;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px gold; }
-  to { text-shadow: 0 0 30px orange; }
-}
-
-/* Buttons */
-.btn {
-  display: block;
-  width: 85%;
-  margin: 15px auto;
-  padding: 16px;
-  font-size: 20px;
+  padding: 20px;
   border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
+  width: 250px;
+  text-align: center;
+  backdrop-filter: blur(10px);
 }
 
-.telegram {
-  background: linear-gradient(#0088cc, #005f8f);
-}
-
-.whatsapp {
-  background: linear-gradient(#25D366, #1da851);
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px gold;
-}
-
-/* Bonus box */
-.bonus {
-  margin-top: 25px;
-  padding: 15px;
-  border: 2px solid gold;
+/* GAME */
+iframe {
+  width: 90%;
+  height: 350px;
   border-radius: 10px;
-  color: gold;
-  font-size: 20px;
-  animation: pulse 1.5s infinite;
+  border: none;
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 5px gold; }
-  50% { box-shadow: 0 0 20px gold; }
-  100% { box-shadow: 0 0 5px gold; }
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
 }
 
-/* Footer */
-.footer {
-  margin-top: 30px;
-  color: gray;
+.popup-box {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- Coins -->
-<div class="coins" id="coins"></div>
+<header>Silver Book</header>
 
-<div class="container">
+<div class="hero">
+  <h1>Welcome to Silver Book</h1>
+  <p>Play Smart. Earn Fast.</p>
 
-<h1>🎰 SILVER CASINO 🎰</h1>
-
-<div class="sub">🔥 Play & Win Daily 🔥</div>
-
-<div class="icons">🎲 🎯 🃏 💰 🎰</div>
-
-<a href="https://t.me/silveronline24" class="btn telegram">
-📲 Join on Telegram
-</a>
-
-<a href="https://wa.me/917347607874" class="btn whatsapp">
-💬 Chat on WhatsApp
-</a>
-
-<div class="bonus">
-🎁 20% Bonus + 5% Every Deposit 💰
+  <button class="btn play" onclick="showGame()">▶ Play</button>
+  <button class="btn demo" onclick="openPopup()">🎮 Demo ID</button>
+  <button class="btn login" onclick="openLogin()">🔐 Login</button>
 </div>
 
-<div class="footer">
-24/7 Support | Instant Withdraw | Trusted Platform
+<div id="gameSection" style="display:none; text-align:center;">
+  <h2>Game</h2>
+  <iframe src="https://plays.org/game/sprinter/"></iframe>
 </div>
 
+<div class="cards">
+  <div class="card">⚡ Fast Withdrawal</div>
+  <div class="card">📱 Mobile Friendly</div>
+  <div class="card">🔒 Secure System</div>
 </div>
+
+<!-- DEMO POPUP -->
+<div class="popup" id="demoPopup">
+  <div class="popup-box">
+    <h3>Get Demo ID</h3>
+    <p>Contact on WhatsApp</p>
+    <a href="https://wa.me/7347607874" class="btn demo">Open WhatsApp</a>
+    <br><br>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<!-- LOGIN POPUP -->
+<div class="popup" id="loginPopup">
+  <div class="popup-box">
+    <h3>Login</h3>
+    <input type="text" placeholder="Username"><br><br>
+    <input type="password" placeholder="Password"><br><br>
+    <button onclick="fakeLogin()">Login</button>
+    <br><br>
+    <button onclick="closeLogin()">Close</button>
+  </div>
+</div>
+
+<a href="https://wa.me/1234567890" class="whatsapp">💬</a>
 
 <script>
-// Create falling coins
-let coinsContainer = document.getElementById("coins");
+function showGame(){
+  document.getElementById("gameSection").style.display="block";
+}
 
-for (let i = 0; i < 30; i++) {
-  let coin = document.createElement("div");
-  coin.classList.add("coin");
-  coin.innerHTML = "💰";
-  coin.style.left = Math.random() * 100 + "%";
-  coin.style.animationDuration = (3 + Math.random() * 5) + "s";
-  coinsContainer.appendChild(coin);
+function openPopup(){
+  document.getElementById("demoPopup").style.display="flex";
+}
+
+function closePopup(){
+  document.getElementById("demoPopup").style.display="none";
+}
+
+function openLogin(){
+  document.getElementById("loginPopup").style.display="flex";
+}
+
+function closeLogin(){
+  document.getElementById("loginPopup").style.display="none";
+}
+
+function fakeLogin(){
+  alert("Login Successful (Demo)");
 }
 </script>
 
