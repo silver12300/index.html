@@ -3,149 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silver Book</title>
+<title>Silver Book VIP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color: white;
-  text-align: center;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:black;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
 }
 
-/* Hidden Sections */
-#dashboard { display: none; }
+/* Animated Gold Glow */
+body::before {
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle, rgba(255,215,0,0.08), transparent);
+  animation: move 8s infinite linear;
+  z-index:-1;
+}
+@keyframes move {
+  0% { transform:translate(0,0); }
+  50% { transform:translate(-20%,-20%); }
+  100% { transform:translate(0,0); }
+}
+
+/* Header */
+header {
+  padding:50px 20px;
+}
+h1 {
+  font-size:50px;
+  color:gold;
+  text-shadow:0 0 20px gold;
+}
+.tagline {
+  color:#aaa;
+}
+
+/* Countdown */
+.timer {
+  font-size:20px;
+  color:#ffcc00;
+  margin-top:10px;
+}
+
+/* Live Users */
+.users {
+  margin-top:10px;
+  font-size:16px;
+  color:#00e6e6;
+}
 
 /* Card */
 .card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  margin: 20px;
-  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,215,0,0.2);
+  backdrop-filter: blur(20px);
+  border-radius:20px;
+  padding:20px;
+  margin:20px;
 }
 
-/* Input */
-input {
-  padding: 10px;
-  margin: 10px;
-  width: 80%;
-  border-radius: 10px;
-  border: none;
+/* Buttons */
+.btn {
+  display:block;
+  margin:15px auto;
+  padding:15px;
+  width:80%;
+  max-width:320px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+  color:white;
+  position:relative;
+  overflow:hidden;
 }
 
-/* Button */
-button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #00e6e6;
-  cursor: pointer;
-  font-weight: bold;
+/* Shine */
+.btn::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+}
+.btn:hover::before {
+  left:100%;
+  transition:0.6s;
 }
 
-/* Game Boxes */
-.game {
-  background: rgba(255,255,255,0.1);
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
+.whatsapp { background:linear-gradient(45deg,#25D366,#128C7E); }
+.telegram { background:linear-gradient(45deg,#0088cc,#005f8a); }
+.instagram { background:linear-gradient(45deg,#E1306C,#833AB4); }
+
+/* Hero */
+.hero img {
+  width:90%;
+  max-width:600px;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 0 40px rgba(255,215,0,0.3);
 }
 
-/* Logout */
-.logout {
-  background: red;
-  margin-top: 20px;
+/* Winner Popup */
+.popup {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#111;
+  padding:10px 15px;
+  border-radius:10px;
+  font-size:14px;
+  display:none;
+}
+
+/* Footer */
+footer {
+  margin-top:40px;
+  font-size:14px;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Silver Book</h1>
+<header>
+  <h1>Silver Book</h1>
+  <p class="tagline">VIP Gaming Platform</p>
+  <div class="timer">⏳ Offer Ends In: <span id="countdown"></span></div>
+  <div class="users">👥 <span id="users"></span> Users Online</div>
+</header>
 
-<!-- LOGIN -->
-<div id="login" class="card">
-  <h2>Login / Signup</h2>
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
-  <br>
-  <button onclick="login()">Login</button>
+<div class="card">
+  <h2>🎁 Bonus</h2>
+  <p>20% New ID Bonus<br>5% Deposit Bonus</p>
 </div>
 
-<!-- DASHBOARD -->
-<div id="dashboard">
-
-  <div class="card">
-    <h2>Welcome, <span id="user"></span></h2>
-    <p>💰 Balance: ₹<span id="balance"></span></p>
-  </div>
-
-  <div class="card">
-    <h3>🎮 Games</h3>
-    <div class="game">Casino Game</div>
-    <div class="game">Cricket Betting</div>
-    <div class="game">Live Game</div>
-  </div>
-
-  <div class="card">
-    <h3>💰 Deposit</h3>
-    <input type="number" id="amount" placeholder="Enter Amount">
-    <button onclick="deposit()">Add Money</button>
-  </div>
-
-  <button class="logout" onclick="logout()">Logout</button>
-
+<div class="card">
+  <a class="btn whatsapp" href="https://wa.me/917347607874">Join WhatsApp</a>
+  <a class="btn telegram" href="https://t.me/silveronline24">Join Telegram</a>
+  <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025">Instagram</a>
 </div>
+
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f">
+</div>
+
+<div id="popup" class="popup"></div>
+
+<p style="font-size:12px;">⚠️ 18+ Only</p>
+
+<footer>© 2026 Silver Book VIP</footer>
 
 <script>
 
-// Check login on reload
-if(localStorage.getItem("user")){
-  showDashboard();
-}
+/* Countdown Timer */
+let time = 600;
+setInterval(()=>{
+  let m = Math.floor(time/60);
+  let s = time%60;
+  document.getElementById("countdown").innerText = m+":"+s;
+  if(time>0) time--;
+},1000);
 
-// LOGIN FUNCTION
-function login(){
-  let user = document.getElementById("username").value;
-  let pass = document.getElementById("password").value;
+/* Live Users */
+let u = 120;
+setInterval(()=>{
+  u += Math.floor(Math.random()*3);
+  document.getElementById("users").innerText = u;
+},2000);
 
-  if(user && pass){
-    localStorage.setItem("user", user);
-    localStorage.setItem("balance", 1000); // default balance
-    showDashboard();
-  } else {
-    alert("Enter details");
-  }
-}
+/* Winner Popup */
+let names=["Rahul","Aman","Rohit","Vikas","Arjun"];
+setInterval(()=>{
+  let name = names[Math.floor(Math.random()*names.length)];
+  let amt = Math.floor(Math.random()*5000)+500;
+  let popup = document.getElementById("popup");
 
-// SHOW DASHBOARD
-function showDashboard(){
-  document.getElementById("login").style.display = "none";
-  document.getElementById("dashboard").style.display = "block";
+  popup.innerText = name+" won ₹"+amt;
+  popup.style.display="block";
 
-  document.getElementById("user").innerText = localStorage.getItem("user");
-  document.getElementById("balance").innerText = localStorage.getItem("balance");
-}
-
-// DEPOSIT
-function deposit(){
-  let amt = parseInt(document.getElementById("amount").value);
-  let balance = parseInt(localStorage.getItem("balance"));
-
-  if(amt > 0){
-    balance += amt;
-    localStorage.setItem("balance", balance);
-    document.getElementById("balance").innerText = balance;
-    alert("Money Added!");
-  }
-}
-
-// LOGOUT
-function logout(){
-  localStorage.clear();
-  location.reload();
-}
+  setTimeout(()=>{ popup.style.display="none"; },3000);
+},5000);
 
 </script>
 
