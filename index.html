@@ -1,20 +1,44 @@
-<!-- IPL TOP BAR -->
-<div style="background:linear-gradient(45deg,#ffcc00,#ff6600); padding:10px; font-weight:bold;">
-  🏏 IPL SPECIAL OFFER – GET YOUR IPL ID NOW 🔥
+<!-- POPUP BOX -->
+<div id="popup" class="popup">
+  <p>🏏 IPL ID chahiye?</p>
+  <a href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID">
+    Get IPL ID Now
+  </a>
 </div>
 
-<header>
-  <h1>Silver Book</h1>
-  <p class="tagline">Trusted • Fast • Secure Gaming Platform</p>
-</header>
+<style>
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
-<!-- IPL OFFER CARD -->
-<div class="card" style="border:1px solid #ffcc00;">
-  <h2 style="color:#ffcc00;">🏏 IPL OFFER</h2>
-  <p style="font-size:18px;">
-    🎁 Get Your IPL ID Today <br>
-    💰 20% Bonus on New ID <br>
-    ⚡ Instant Activation <br>
-    📞 24/7 Support
-  </p>
-</div>
+.popup a {
+  display:block;
+  margin-top:10px;
+  background:#25D366;
+  padding:8px;
+  border-radius:6px;
+  color:white;
+  text-decoration:none;
+}
+</style>
+
+<script>
+// SHOW POPUP AFTER 3 SEC
+setTimeout(()=>{
+  document.getElementById("popup").style.display="block";
+},3000);
+
+// AUTO REDIRECT AFTER 8 SEC
+setTimeout(()=>{
+  window.location.href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID";
+},8000);
+</script>
