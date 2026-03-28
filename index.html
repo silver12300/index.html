@@ -1,179 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silver Book</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg,#020617,#0f172a);
-  color: white;
-}
-
-/* HEADER */
-header {
-  padding: 15px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  background: rgba(0,0,0,0.6);
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.play { background:#22c55e; }
-.demo { background:#facc15; color:black; }
-.login { background:#3b82f6; }
-
-/* CARDS */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  margin: 10px;
-  padding: 20px;
-  border-radius: 12px;
-  width: 250px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-/* GAME */
-iframe {
-  width: 90%;
-  height: 350px;
-  border-radius: 10px;
-  border: none;
-}
-
-/* POPUP */
-.popup {
-  display: none;
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-box {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silver Book</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1606166325695-4a3b0b4f9fb9') no-repeat center/cover;
+      color: white;
+      text-align: center;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.7);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 {
+      color: gold;
+      font-size: 40px;
+    }
+    .offer {
+      font-size: 22px;
+      margin: 20px 0;
+    }
+    .number {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .btn {
+      display: block;
+      margin: 10px auto;
+      padding: 12px;
+      width: 250px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+    .whatsapp { background: #25D366; }
+    .instagram { background: #E1306C; }
+    .telegram { background: #0088cc; }
+  </style>
 </head>
-
 <body>
-
-<header>Silver Book</header>
-
-<div class="hero">
-  <h1>Welcome to Silver Book</h1>
-  <p>Play Smart. Earn Fast.</p>
-
-  <button class="btn play" onclick="showGame()">▶ Play</button>
-  <button class="btn demo" onclick="openPopup()">🎮 Demo ID</button>
-  <button class="btn login" onclick="openLogin()">🔐 Login</button>
+  <div class="overlay">
+    <h1>SILVER BOOK</h1><div class="offer">
+  🎰 20% Bonus on New ID<br>
+  💰 5% on Every Deposit
 </div>
 
-<div id="gameSection" style="display:none; text-align:center;">
-  <h2>Game</h2>
-  <iframe src="https://plays.org/game/sprinter/"></iframe>
+<div class="number">
+  📞 +91 7347607874
 </div>
 
-<div class="cards">
-  <div class="card">⚡ Fast Withdrawal</div>
-  <div class="card">📱 Mobile Friendly</div>
-  <div class="card">🔒 Secure System</div>
-</div>
-
-<!-- DEMO POPUP -->
-<div class="popup" id="demoPopup">
-  <div class="popup-box">
-    <h3>Get Demo ID</h3>
-    <p>Contact on WhatsApp</p>
-    <a href="https://wa.me/7347607874" class="btn demo">Open WhatsApp</a>
-    <br><br>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
-
-<!-- LOGIN POPUP -->
-<div class="popup" id="loginPopup">
-  <div class="popup-box">
-    <h3>Login</h3>
-    <input type="text" placeholder="Username"><br><br>
-    <input type="password" placeholder="Password"><br><br>
-    <button onclick="fakeLogin()">Login</button>
-    <br><br>
-    <button onclick="closeLogin()">Close</button>
-  </div>
-</div>
-
-<a href="https://wa.me/1234567890" class="whatsapp">💬</a>
-
-<script>
-function showGame(){
-  document.getElementById("gameSection").style.display="block";
-}
-
-function openPopup(){
-  document.getElementById("demoPopup").style.display="flex";
-}
-
-function closePopup(){
-  document.getElementById("demoPopup").style.display="none";
-}
-
-function openLogin(){
-  document.getElementById("loginPopup").style.display="flex";
-}
-
-function closeLogin(){
-  document.getElementById("loginPopup").style.display="none";
-}
-
-function fakeLogin(){
-  alert("Login Successful (Demo)");
-}
-</script>
-
-</body>
-</html>
+<a class="btn whatsapp" href="https://wa.me/917
