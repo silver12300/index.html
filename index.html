@@ -5,19 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silver Book VIP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
 <style>
 body {
   margin:0;
-  font-family:'Poppins',sans-serif;
+  font-family: Arial;
   color:white;
   text-align:center;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 
-/* VIDEO BACKGROUND */
-video {
+/* VIDEO BACKGROUND FIX */
+.video-bg {
   position:fixed;
   top:0;
   left:0;
@@ -38,16 +36,6 @@ video {
   z-index:-1;
 }
 
-/* Header */
-header {
-  padding:50px 20px;
-}
-h1 {
-  font-size:50px;
-  color:gold;
-  text-shadow:0 0 20px gold;
-}
-
 /* Buttons */
 .btn {
   display:block;
@@ -62,55 +50,37 @@ h1 {
   animation: blink 1s infinite;
 }
 
-/* BLINK EFFECT */
 @keyframes blink {
   50% { opacity:0.4; }
 }
 
-/* Colors */
 .whatsapp { background:#25D366; }
 .telegram { background:#0088cc; }
 .instagram { background:#E1306C; }
 
-/* Card */
 .card {
-  background: rgba(0,0,0,0.5);
-  border-radius:20px;
-  padding:20px;
-  margin:20px;
-}
-
-/* Footer */
-footer {
-  margin-top:40px;
-  font-size:14px;
+  margin-top:100px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
-<video autoplay muted loop>
-  <source src="https://cdn.coverr.co/videos/coverr-casino-chips-rolling-1606/1080p.mp4" type="video/mp4">
+<!-- WORKING VIDEO -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="https://cdn.pixabay.com/vimeo/458061641/casino-42445.mp4?width=1280&hash=bb0c6c0f0e9dcb7d0b2cbe3e9d1f06b1d92b68b3" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<header>
+<div class="card">
   <h1>Silver Book</h1>
   <p>🎁 20% Bonus • 5% Deposit</p>
-</header>
 
-<div class="card">
   <a class="btn whatsapp" href="https://wa.me/917347607874">Join WhatsApp</a>
   <a class="btn telegram" href="https://t.me/silveronline24">Join Telegram</a>
   <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025">Instagram</a>
 </div>
-
-<footer>
-⚠️ 18+ Only
-</footer>
 
 </body>
 </html>
