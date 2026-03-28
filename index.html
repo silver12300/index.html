@@ -5,142 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silver Book</title>
 
-<meta name="description" content="Join Silver Book and get exciting bonuses">
-
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color: white;
   text-align: center;
 }
 
-/* Header */
-header {
-  padding: 30px;
-}
-h1 {
-  color: #00e6e6;
-  font-size: 40px;
-}
+/* Hidden Sections */
+#dashboard { display: none; }
 
-/* Glass Effect Box */
+/* Card */
 .card {
   background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
   padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 400px;
+  margin: 20px;
+  border-radius: 15px;
 }
-
-/* Buttons */
-.btn {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  border-radius: 25px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.whatsapp { background:#25D366; }
-.telegram { background:#0088cc; }
-.instagram { background:#E1306C; }
 
 /* Input */
 input {
-  width: 90%;
   padding: 10px;
-  margin: 8px;
+  margin: 10px;
+  width: 80%;
   border-radius: 10px;
   border: none;
 }
 
-/* Login Button */
-.login-btn {
-  background: #00e6e6;
-  border: none;
-  padding: 10px;
+/* Button */
+button {
+  padding: 10px 20px;
   border-radius: 20px;
-  width: 95%;
+  border: none;
+  background: #00e6e6;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* Image */
-img {
-  width: 90%;
-  max-width: 500px;
+/* Game Boxes */
+.game {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  margin: 10px;
   border-radius: 10px;
+}
+
+/* Logout */
+.logout {
+  background: red;
   margin-top: 20px;
-}
-
-/* Footer */
-footer {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #ccc;
-}
-
-/* Mobile */
-@media(max-width:600px){
-  h1 { font-size: 28px; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Silver Book</h1>
-  <p>🎁 New ID Bonus: 20%<br>💰 Deposit Bonus: 5%</p>
-</header>
+<h1>Silver Book</h1>
 
-<!-- Login Box -->
-<div class="card">
+<!-- LOGIN -->
+<div id="login" class="card">
   <h2>Login / Signup</h2>
-  <input type="text" placeholder="Enter Username">
-  <input type="password" placeholder="Enter Password">
-  <button class="login-btn" onclick="login()">Login</button>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <br>
+  <button onclick="login()">Login</button>
 </div>
 
-<!-- Buttons -->
-<div class="card">
-  <a class="btn whatsapp" href="https://wa.me/917347607874">WhatsApp</a>
-  <a class="btn telegram" href="https://t.me/silveronline24">Telegram</a>
-  <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025">Instagram</a>
+<!-- DASHBOARD -->
+<div id="dashboard">
+
+  <div class="card">
+    <h2>Welcome, <span id="user"></span></h2>
+    <p>💰 Balance: ₹<span id="balance"></span></p>
+  </div>
+
+  <div class="card">
+    <h3>🎮 Games</h3>
+    <div class="game">Casino Game</div>
+    <div class="game">Cricket Betting</div>
+    <div class="game">Live Game</div>
+  </div>
+
+  <div class="card">
+    <h3>💰 Deposit</h3>
+    <input type="number" id="amount" placeholder="Enter Amount">
+    <button onclick="deposit()">Add Money</button>
+  </div>
+
+  <button class="logout" onclick="logout()">Logout</button>
+
 </div>
-
-<!-- Image -->
-<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" loading="lazy">
-
-<!-- Deposit Section -->
-<div class="card">
-  <h3>Deposit</h3>
-  <input type="number" placeholder="Enter Amount">
-  <button class="login-btn">Proceed</button>
-</div>
-
-<!-- Disclaimer -->
-<p style="font-size:13px; color:#aaa;">
-⚠️ 18+ Only. Play responsibly.
-</p>
-
-<footer>
-© 2026 Silver Book
-</footer>
 
 <script>
-function login(){
-  alert("Login feature demo only (backend required)");
+
+// Check login on reload
+if(localStorage.getItem("user")){
+  showDashboard();
 }
+
+// LOGIN FUNCTION
+function login(){
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+
+  if(user && pass){
+    localStorage.setItem("user", user);
+    localStorage.setItem("balance", 1000); // default balance
+    showDashboard();
+  } else {
+    alert("Enter details");
+  }
+}
+
+// SHOW DASHBOARD
+function showDashboard(){
+  document.getElementById("login").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+
+  document.getElementById("user").innerText = localStorage.getItem("user");
+  document.getElementById("balance").innerText = localStorage.getItem("balance");
+}
+
+// DEPOSIT
+function deposit(){
+  let amt = parseInt(document.getElementById("amount").value);
+  let balance = parseInt(localStorage.getItem("balance"));
+
+  if(amt > 0){
+    balance += amt;
+    localStorage.setItem("balance", balance);
+    document.getElementById("balance").innerText = balance;
+    alert("Money Added!");
+  }
+}
+
+// LOGOUT
+function logout(){
+  localStorage.clear();
+  location.reload();
+}
+
 </script>
 
 </body>
