@@ -11,26 +11,31 @@
 body {
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:black;
   color:white;
   text-align:center;
   overflow-x:hidden;
 }
 
-/* Animated Gold Glow */
-body::before {
-  content:"";
+/* VIDEO BACKGROUND */
+video {
   position:fixed;
-  width:200%;
-  height:200%;
-  background: radial-gradient(circle, rgba(255,215,0,0.08), transparent);
-  animation: move 8s infinite linear;
-  z-index:-1;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
 }
-@keyframes move {
-  0% { transform:translate(0,0); }
-  50% { transform:translate(-20%,-20%); }
-  100% { transform:translate(0,0); }
+
+/* DARK OVERLAY */
+.overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
 }
 
 /* Header */
@@ -41,33 +46,6 @@ h1 {
   font-size:50px;
   color:gold;
   text-shadow:0 0 20px gold;
-}
-.tagline {
-  color:#aaa;
-}
-
-/* Countdown */
-.timer {
-  font-size:20px;
-  color:#ffcc00;
-  margin-top:10px;
-}
-
-/* Live Users */
-.users {
-  margin-top:10px;
-  font-size:16px;
-  color:#00e6e6;
-}
-
-/* Card */
-.card {
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,215,0,0.2);
-  backdrop-filter: blur(20px);
-  border-radius:20px;
-  padding:20px;
-  margin:20px;
 }
 
 /* Buttons */
@@ -81,72 +59,48 @@ h1 {
   text-decoration:none;
   font-weight:bold;
   color:white;
-  position:relative;
-  overflow:hidden;
+  animation: blink 1s infinite;
 }
 
-/* Shine */
-.btn::before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-}
-.btn:hover::before {
-  left:100%;
-  transition:0.6s;
+/* BLINK EFFECT */
+@keyframes blink {
+  50% { opacity:0.4; }
 }
 
-.whatsapp { background:linear-gradient(45deg,#25D366,#128C7E); }
-.telegram { background:linear-gradient(45deg,#0088cc,#005f8a); }
-.instagram { background:linear-gradient(45deg,#E1306C,#833AB4); }
+/* Colors */
+.whatsapp { background:#25D366; }
+.telegram { background:#0088cc; }
+.instagram { background:#E1306C; }
 
-/* Hero */
-.hero img {
-  width:90%;
-  max-width:600px;
+/* Card */
+.card {
+  background: rgba(0,0,0,0.5);
   border-radius:20px;
-  margin-top:20px;
-  box-shadow:0 0 40px rgba(255,215,0,0.3);
-}
-
-/* Winner Popup */
-.popup {
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#111;
-  padding:10px 15px;
-  border-radius:10px;
-  font-size:14px;
-  display:none;
+  padding:20px;
+  margin:20px;
 }
 
 /* Footer */
 footer {
   margin-top:40px;
   font-size:14px;
-  color:#777;
 }
 </style>
 </head>
 
 <body>
 
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop>
+  <source src="https://cdn.coverr.co/videos/coverr-casino-chips-rolling-1606/1080p.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
 <header>
   <h1>Silver Book</h1>
-  <p class="tagline">VIP Gaming Platform</p>
-  <div class="timer">⏳ Offer Ends In: <span id="countdown"></span></div>
-  <div class="users">👥 <span id="users"></span> Users Online</div>
+  <p>🎁 20% Bonus • 5% Deposit</p>
 </header>
-
-<div class="card">
-  <h2>🎁 Bonus</h2>
-  <p>20% New ID Bonus<br>5% Deposit Bonus</p>
-</div>
 
 <div class="card">
   <a class="btn whatsapp" href="https://wa.me/917347607874">Join WhatsApp</a>
@@ -154,48 +108,9 @@ footer {
   <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025">Instagram</a>
 </div>
 
-<div class="hero">
-  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f">
-</div>
-
-<div id="popup" class="popup"></div>
-
-<p style="font-size:12px;">⚠️ 18+ Only</p>
-
-<footer>© 2026 Silver Book VIP</footer>
-
-<script>
-
-/* Countdown Timer */
-let time = 600;
-setInterval(()=>{
-  let m = Math.floor(time/60);
-  let s = time%60;
-  document.getElementById("countdown").innerText = m+":"+s;
-  if(time>0) time--;
-},1000);
-
-/* Live Users */
-let u = 120;
-setInterval(()=>{
-  u += Math.floor(Math.random()*3);
-  document.getElementById("users").innerText = u;
-},2000);
-
-/* Winner Popup */
-let names=["Rahul","Aman","Rohit","Vikas","Arjun"];
-setInterval(()=>{
-  let name = names[Math.floor(Math.random()*names.length)];
-  let amt = Math.floor(Math.random()*5000)+500;
-  let popup = document.getElementById("popup");
-
-  popup.innerText = name+" won ₹"+amt;
-  popup.style.display="block";
-
-  setTimeout(()=>{ popup.style.display="none"; },3000);
-},5000);
-
-</script>
+<footer>
+⚠️ 18+ Only
+</footer>
 
 </body>
 </html>
