@@ -1,78 +1,147 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silver Book</title>
+
+<meta name="description" content="Join Silver Book and get exciting bonuses">
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color: white;
   text-align: center;
 }
+
+/* Header */
 header {
-  padding: 40px 20px;
+  padding: 30px;
 }
-header h1 {
-  font-size: 48px;
+h1 {
   color: #00e6e6;
+  font-size: 40px;
 }
-.bonus {
-  margin: 20px 0;
-  font-size: 20px;
+
+/* Glass Effect Box */
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
 }
-.buttons {
-  margin: 30px 0;
-}
+
+/* Buttons */
 .btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 15px 25px;
-  border-radius: 30px;
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 25px;
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  animation: blink 1s infinite;
+  font-weight: bold;
+  transition: 0.3s;
 }
-.whatsapp { background: #25D366; }
-.telegram { background: #0088cc; }
-.instagram { background: #E1306C; }
-@keyframes blink {
-  50% { opacity: 0.5; }
+.btn:hover {
+  transform: scale(1.05);
 }
-.contact {
-  margin-top: 20px;
-  font-size: 18px;
-}
-.casino-img {
-  margin-top: 40px;
-}
-.casino-img img {
+
+.whatsapp { background:#25D366; }
+.telegram { background:#0088cc; }
+.instagram { background:#E1306C; }
+
+/* Input */
+input {
   width: 90%;
-  max-width: 600px;
-  border-radius: 15px;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 10px;
+  border: none;
 }
+
+/* Login Button */
+.login-btn {
+  background: #00e6e6;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  width: 95%;
+  cursor: pointer;
+}
+
+/* Image */
+img {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Footer */
 footer {
-  margin-top: 40px;
-  padding: 20px;
+  margin-top: 30px;
   font-size: 14px;
   color: #ccc;
 }
+
+/* Mobile */
+@media(max-width:600px){
+  h1 { font-size: 28px; }
+}
 </style>
 </head>
-<body><header>
+
+<body>
+
+<header>
   <h1>Silver Book</h1>
-  <p class="bonus">🎁 New ID Bonus: 20%<br>💰 Every Deposit Bonus: 5%</p>
-</header><div class="buttons">
-  <a class="btn whatsapp" href="https://wa.me/917347607874" target="_blank">WhatsApp</a>
-  <a class="btn telegram" href="https://t.me/silveronline24" target="_blank">Telegram</a>
-  <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025" target="_blank">Instagram</a>
-</div><div class="contact">
-  📞 WhatsApp: +91 7347607874
-</div><div class="casino-img">
-  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" alt="Casino">
-</div><footer>
-  © 2026 Silver Book. All rights reserved.
-</footer></body>
+  <p>🎁 New ID Bonus: 20%<br>💰 Deposit Bonus: 5%</p>
+</header>
+
+<!-- Login Box -->
+<div class="card">
+  <h2>Login / Signup</h2>
+  <input type="text" placeholder="Enter Username">
+  <input type="password" placeholder="Enter Password">
+  <button class="login-btn" onclick="login()">Login</button>
+</div>
+
+<!-- Buttons -->
+<div class="card">
+  <a class="btn whatsapp" href="https://wa.me/917347607874">WhatsApp</a>
+  <a class="btn telegram" href="https://t.me/silveronline24">Telegram</a>
+  <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025">Instagram</a>
+</div>
+
+<!-- Image -->
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" loading="lazy">
+
+<!-- Deposit Section -->
+<div class="card">
+  <h3>Deposit</h3>
+  <input type="number" placeholder="Enter Amount">
+  <button class="login-btn">Proceed</button>
+</div>
+
+<!-- Disclaimer -->
+<p style="font-size:13px; color:#aaa;">
+⚠️ 18+ Only. Play responsibly.
+</p>
+
+<footer>
+© 2026 Silver Book
+</footer>
+
+<script>
+function login(){
+  alert("Login feature demo only (backend required)");
+}
+</script>
+
+</body>
 </html>
