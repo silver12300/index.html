@@ -13,11 +13,9 @@ body {
   text-align: center;
 }
 
-/* Video background */
+/* Video */
 video {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -34,7 +32,6 @@ video {
 header {
   padding: 20px;
   font-size: 26px;
-  font-weight: bold;
   color: gold;
 }
 
@@ -43,20 +40,15 @@ header {
   padding: 20px;
 }
 
-.banner h1 {
-  color: gold;
-}
-
 .trust {
   color: #00ff99;
-  margin-top: 10px;
 }
 
 /* Games */
 .games {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 10px;
   padding: 15px;
 }
 
@@ -76,6 +68,16 @@ header {
   font-weight: bold;
 }
 
+/* Blinking */
+.blink {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% {opacity:1;}
+  50% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .join {
   background: gold;
   color: black;
@@ -85,6 +87,47 @@ header {
   background: #222;
   color: white;
   border: 1px solid gold;
+}
+
+/* Social */
+.social {
+  margin-top: 20px;
+}
+
+.social a {
+  display: block;
+  margin: 6px;
+  color: #00ccff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid gold;
+}
+
+.close {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: red;
+  color: white;
+  border: none;
 }
 
 /* WhatsApp */
@@ -104,19 +147,17 @@ header {
 
 <body>
 
-<!-- Background Video -->
+<!-- VIDEO -->
 <video autoplay muted loop>
-  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  <source src="https://www.w3schools.com/howto/rain.mp4">
 </video>
 
 <div class="overlay">
 
-<header>
-🎰 SILVER BOOK
-</header>
+<header>🎰 SILVER BOOK</header>
 
 <div class="banner">
-<h1>India’s Trusted Gaming Platform</h1>
+<h1 class="blink">🔥 IPL ID AVAILABLE 🔥</h1>
 <p>Play Teen Patti, Andar Bahar & More</p>
 <div class="trust">✔ Instant Withdraw | ✔ 24/7 Support</div>
 </div>
@@ -128,8 +169,15 @@ header {
 <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f">
 </div>
 
-<a href="https://wa.me/917347607874" class="btn join">📲 Join Now</a>
+<a href="https://wa.me/+917347607874" class="btn join blink">📲 Join Now</a>
 <a href="#" class="btn play">🎯 Play Now</a>
+
+<!-- SOCIAL LINKS -->
+<div class="social">
+<a href="https://t.me/silveronline24">📢 Join Telegram</a>
+<a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==">📸 Follow Instagram</a>
+<a href="https://wa.me/+917347607874">💬 Chat on WhatsApp</a>
+</div>
 
 </div>
 
@@ -137,7 +185,25 @@ header {
 © 2026 Silver Book
 </footer>
 
-<a href="https://wa.me/917347607874" class="whatsapp">💬</a>
+<!-- WhatsApp Floating -->
+<a href="https://wa.me/+917347607874" class="whatsapp">💬</a>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>🔥 IPL ID AVAILABLE 🔥</h2>
+    <p>Get Your ID Now</p>
+    <a href="https://wa.me/+917347607874" class="btn join">Join Now</a>
+    <br>
+    <button class="close" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
