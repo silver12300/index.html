@@ -10,43 +10,44 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg,#6a11cb,#2575fc);
-  color: white;
 }
 
-/* 🔥 PREMIUM HEADER */
-.header {
-  text-align: center;
-  padding: 20px;
-  font-size: 32px;
-  font-weight: bold;
-  background: linear-gradient(90deg,#FFD700,#FFA500);
-  color: black;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px white;
-}
-
-/* SUB LINE */
-.subline {
-  text-align: center;
-  background: red;
-  padding: 8px;
-  font-weight: bold;
-  animation: scroll 10s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes scroll {
-  0% {transform: translateX(100%)}
-  100% {transform: translateX(-100%)}
-}
-
-/* MAIN */
-.main {
-  background: #f1f1f1;
+/* APP BOX */
+.app {
+  max-width: 420px;
+  margin: auto;
+  background: #f5f5f5;
+  min-height: 100vh;
   border-radius: 25px;
-  margin: 10px;
-  padding: 15px;
-  color: black;
+  overflow: hidden;
+}
+
+/* HEADER */
+.topbar {
+  padding: 12px;
+  background: linear-gradient(90deg,#9d50bb,#6e48aa);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 🔥 LOGO CENTER */
+.logo-box {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.logo-box img {
+  width: 90%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 15px silver);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
 }
 
 /* GAMES */
@@ -54,6 +55,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 12px;
+  padding: 12px;
 }
 
 .card {
@@ -64,7 +66,7 @@ body {
 
 .card img {
   width: 100%;
-  height: 120px;
+  height: 110px;
   object-fit: cover;
 }
 
@@ -73,62 +75,65 @@ body {
   font-weight: bold;
 }
 
-/* 💥 BIG BLINK WHATSAPP BUTTON */
+/* BIG BUTTON */
 .big-btn {
   display: block;
   width: 90%;
-  margin: 20px auto;
-  padding: 18px;
-  font-size: 20px;
+  margin: 15px auto;
+  padding: 16px;
   border-radius: 15px;
   text-align: center;
-  text-decoration: none;
   font-weight: bold;
   background: #25D366;
   color: white;
+  text-decoration: none;
   animation: blink 1s infinite;
-  box-shadow: 0 0 20px #25D366;
 }
 
 @keyframes blink {
-  0% {opacity:1;}
   50% {opacity:0.5;}
-  100% {opacity:1;}
 }
 
 /* COUNTER */
 .counter {
   text-align: center;
-  margin: 20px;
+  padding: 10px;
 }
 
-/* POPUP */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* SECTION */
+.section {
+  padding: 15px;
 }
 
-.popup-content {
-  background: black;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid gold;
+.box {
+  background: #111;
+  color: white;
+  padding: 12px;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
+/* SOCIAL */
+.social a {
+  display: block;
+  margin: 8px;
+  padding: 12px;
   text-align: center;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
 }
 
-.close {
-  margin-top: 10px;
-  padding: 8px 15px;
+.telegram { background:#0088cc; }
+.instagram { background:#e1306c; }
+.whatsapp { background:#25D366; }
+
+/* TICKER */
+.ticker {
   background: red;
   color: white;
-  border: none;
+  padding: 8px;
+  text-align: center;
 }
 </style>
 
@@ -136,17 +141,16 @@ body {
 
 <body>
 
-<!-- HEADER -->
-<div class="header">💰 SILVER BOOK 247 💰</div>
+<div class="app">
 
-<!-- MOVING LINE -->
-<div class="subline">
-🔥 Deposit 5% | New ID 20% | Refer 7% | Loss 2% | IPL Special 🔥
+<div class="topbar">💰 SILVER BOOK 247</div>
+
+<!-- 🔥 LOGO -->
+<div class="logo-box">
+  <img src="https://i.postimg.cc/8P1hYw0V/silver-book.png">
 </div>
 
-<!-- MAIN -->
-<div class="main">
-
+<!-- GAMES -->
 <div class="games">
 <div class="card"><img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317"><p>Teen Patti</p></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d"><p>Dragon Tiger</p></div>
@@ -154,56 +158,47 @@ body {
 <div class="card"><img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f"><p>Poker</p></div>
 </div>
 
-<!-- 💥 BIG WHATSAPP BUTTON -->
-<a href="https://wa.me/+917347607874" class="big-btn">
-📲 JOIN NOW ON WHATSAPP
-</a>
-
-</div>
+<!-- BUTTON -->
+<a href="https://wa.me/+917347607874" class="big-btn">📲 JOIN NOW</a>
 
 <!-- COUNTER -->
 <div class="counter">
-<h3>👥 Users Online: <span id="users">1523</span></h3>
-<h3>🔥 Joined Today: <span id="joins">320</span></h3>
+👥 Users: <span id="users">1523</span> | 🔥 Join: <span id="joins">320</span>
 </div>
 
-<!-- WINNING -->
-<div style="background:red;padding:10px;text-align:center;">
-<span id="winnerText"></span>
+<!-- TRUST -->
+<div class="section">
+<div class="box">💎 Trusted by 10,000+ users</div>
+<div class="box">⚡ Instant Withdraw</div>
+<div class="box">🏆 Daily Bonus Available</div>
 </div>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h2>🔥 IPL ID AVAILABLE 🔥</h2>
-    <p>Get Your ID Now</p>
-    <a href="https://wa.me/+917347607874" class="big-btn">Join Now</a>
-    <br>
-    <button class="close" onclick="closePopup()">Close</button>
-  </div>
+<!-- SOCIAL -->
+<div class="social">
+<a href="https://t.me/silveronline24" class="telegram">Telegram</a>
+<a href="https://www.instagram.com/silve_rbook2025" class="instagram">Instagram</a>
+<a href="https://wa.me/+917347607874" class="whatsapp">WhatsApp</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker" id="win"></div>
+
 </div>
 
 <script>
-// COUNTERS
-let users=1523;
-setInterval(()=>{users+=Math.floor(Math.random()*3);document.getElementById("users").innerText=users;},2000);
-
-let joins=320;
-setInterval(()=>{joins+=Math.floor(Math.random()*2);document.getElementById("joins").innerText=joins;},3000);
-
-// WINNING
-let names=["Rahul","Aman","Vikas","Rohit","Sahil"];
-let amt=[5000,8000,12000,15000];
-setInterval(()=>{
-let n=names[Math.floor(Math.random()*names.length)];
-let a=amt[Math.floor(Math.random()*amt.length)];
-document.getElementById("winnerText").innerText="💰 "+n+" won ₹"+a+" just now!";
+let u=1523,j=320;
+setInterval(()=>{u+=Math.floor(Math.random()*3);j+=Math.floor(Math.random()*2);
+document.getElementById("users").innerText=u;
+document.getElementById("joins").innerText=j;
 },2000);
 
-// POPUP CLOSE
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
+let n=["Rahul","Aman","Vikas","Rohit"];
+let a=[5000,8000,12000];
+setInterval(()=>{
+let name=n[Math.floor(Math.random()*n.length)];
+let amt=a[Math.floor(Math.random()*a.length)];
+document.getElementById("win").innerText="💰 "+name+" won ₹"+amt;
+},2000);
 </script>
 
 </body>
