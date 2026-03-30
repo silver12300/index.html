@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silver Book Casino</title>
+<title>Silver Book 247</title>
 
 <style>
 body {
@@ -22,31 +22,42 @@ video {
   z-index: -1;
 }
 
-/* Overlay */
 .overlay {
   background: rgba(0,0,0,0.7);
-  min-height: 100vh;
+  min-height: 200vh; /* page bada */
 }
 
-/* Header */
+/* HEADER */
 header {
-  padding: 20px;
-  font-size: 26px;
+  padding: 25px;
+  font-size: 30px;
+  font-weight: bold;
   color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+/* MOVING TEXT */
+.marquee {
+  background: red;
+  padding: 10px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.marquee span {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 12s linear infinite;
+}
+
+@keyframes scroll {
+  0% {transform: translateX(100%)}
+  100% {transform: translateX(-100%)}
 }
 
 /* Banner */
 .banner {
-  padding: 20px;
-}
-
-.blink {
-  animation: blink 1s infinite;
-}
-@keyframes blink {
-  0%{opacity:1;}
-  50%{opacity:0;}
-  100%{opacity:1;}
+  padding: 25px;
 }
 
 .trust {
@@ -66,6 +77,23 @@ header {
   border-radius: 10px;
 }
 
+/* Offers */
+.offers {
+  margin: 20px;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  border: 1px solid gold;
+}
+
+.offers h2 {
+  color: gold;
+}
+
+.offers p {
+  margin: 8px 0;
+}
+
 /* Buttons */
 .btn {
   display: block;
@@ -82,13 +110,7 @@ header {
   color: black;
 }
 
-.play {
-  background: #222;
-  color: white;
-  border: 1px solid gold;
-}
-
-/* PREMIUM SOCIAL BUTTONS */
+/* Social Premium */
 .social-btn {
   display: block;
   width: 85%;
@@ -98,47 +120,11 @@ header {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  position: relative;
-  overflow: hidden;
-  transition: 0.3s;
 }
 
-/* Colors */
-.telegram {
-  background: linear-gradient(45deg, #0088cc, #00c6ff);
-  box-shadow: 0 0 15px #0088cc;
-}
-
-.instagram {
-  background: linear-gradient(45deg, #e1306c, #ff7a00);
-  box-shadow: 0 0 15px #e1306c;
-}
-
-.whatsapp-btn {
-  background: linear-gradient(45deg, #25D366, #00ff99);
-  box-shadow: 0 0 15px #25D366;
-}
-
-/* Hover */
-.social-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-/* Shine */
-.social-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: 0.5s;
-}
-
-.social-btn:hover::before {
-  left: 100%;
-}
+.telegram { background: #0088cc; }
+.instagram { background: #e1306c; }
+.whatsapp-btn { background: #25D366; }
 
 /* WhatsApp floating */
 .whatsapp {
@@ -146,38 +132,8 @@ header {
   bottom: 15px;
   right: 15px;
   background: #25D366;
-  color: white;
   padding: 14px;
   border-radius: 50%;
-  text-decoration: none;
-}
-
-/* Popup */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: black;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid gold;
-}
-
-.close {
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: red;
-  color: white;
-  border: none;
 }
 </style>
 
@@ -185,17 +141,23 @@ header {
 
 <body>
 
-<!-- VIDEO -->
 <video autoplay muted loop>
-  <source src="https://www.w3schools.com/howto/rain.mp4">
+<source src="https://www.w3schools.com/howto/rain.mp4">
 </video>
 
 <div class="overlay">
 
-<header>🎰 SILVER BOOK</header>
+<header>🎰 SILVER BOOK 247 🎰</header>
+
+<!-- MOVING LINE -->
+<div class="marquee">
+<span>
+🔥 Every Deposit 5% Bonus | 🆕 New ID 20% Bonus | 🎯 Refer Bonus 7% | 💸 Loss Commission 2% | 🏏 IPL Special Offers Available 🔥
+</span>
+</div>
 
 <div class="banner">
-<h1 class="blink">🔥 IPL ID AVAILABLE 🔥</h1>
+<h1>India’s Trusted Gaming Platform</h1>
 <p>Play Teen Patti, Andar Bahar & More</p>
 <div class="trust">✔ Instant Withdraw | ✔ 24/7 Support</div>
 </div>
@@ -207,39 +169,30 @@ header {
 <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f">
 </div>
 
-<a href="https://wa.me/+917347607874" class="btn join blink">📲 Join Now</a>
-<a href="#" class="btn play">🎯 Play Now</a>
+<!-- OFFERS -->
+<div class="offers">
+<h2>💰 Today’s Offers</h2>
+<p>✔ Every Deposit Bonus: 5%</p>
+<p>✔ New ID Bonus: 20%</p>
+<p>✔ Refer Bonus: 7%</p>
+<p>✔ Loss Commission: 2%</p>
+<p>✔ IPL Special Bonus Available</p>
+</div>
 
-<!-- PREMIUM SOCIAL -->
+<a href="https://wa.me/+917347607874" class="btn join">📲 Join Now</a>
+
+<!-- SOCIAL -->
 <a href="https://t.me/silveronline24" class="social-btn telegram">📢 Join Telegram</a>
-<a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==" class="social-btn instagram">📸 Follow Instagram</a>
+<a href="https://www.instagram.com/silve_rbook2025" class="social-btn instagram">📸 Follow Instagram</a>
 <a href="https://wa.me/+917347607874" class="social-btn whatsapp-btn">💬 WhatsApp Chat</a>
 
 </div>
 
 <footer style="background:black;padding:10px;">
-© 2026 Silver Book
+© 2026 Silver Book 247
 </footer>
 
-<!-- Floating -->
 <a href="https://wa.me/+917347607874" class="whatsapp">💬</a>
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h2>🔥 IPL ID AVAILABLE 🔥</h2>
-    <p>Get Your ID Now</p>
-    <a href="https://wa.me/+917347607874" class="btn join">Join Now</a>
-    <br>
-    <button class="close" onclick="closePopup()">Close</button>
-  </div>
-</div>
-
-<script>
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-</script>
 
 </body>
 </html>
