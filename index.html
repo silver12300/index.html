@@ -8,49 +8,49 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg,#6a11cb,#2575fc);
 }
 
-/* APP BOX */
+/* APP */
 .app {
   max-width: 420px;
   margin: auto;
-  background: #f5f5f5;
-  min-height: 100vh;
-  border-radius: 25px;
-  overflow: hidden;
+  background: #f3f3f3;
+  border-radius: 28px;
+  padding-bottom: 20px;
 }
 
-/* HEADER */
+/* TOP BAR */
 .topbar {
-  padding: 12px;
-  background: linear-gradient(90deg,#9d50bb,#6e48aa);
+  margin: 12px;
+  padding: 10px 12px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#7f00ff,#e100ff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: white;
-  text-align: center;
-  font-weight: bold;
 }
 
-/* 🔥 LOGO CENTER */
-.logo-box {
-  text-align: center;
-  margin: 20px 0;
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo-box img {
-  width: 90%;
-  max-width: 320px;
-  filter: drop-shadow(0 0 15px silver);
-  animation: float 3s ease-in-out infinite;
+.left img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
 }
 
-@keyframes float {
-  0% {transform: translateY(0);}
-  50% {transform: translateY(-10px);}
-  100% {transform: translateY(0);}
+.name {
+  font-size: 14px;
+  font-weight: 600;
 }
 
-/* GAMES */
+/* GRID */
 .games {
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -60,8 +60,9 @@ body {
 
 .card {
   background: white;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
 .card img {
@@ -70,23 +71,15 @@ body {
   object-fit: cover;
 }
 
-.card p {
-  margin: 8px;
-  font-weight: bold;
-}
-
-/* BIG BUTTON */
-.big-btn {
-  display: block;
-  width: 90%;
-  margin: 15px auto;
-  padding: 16px;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: bold;
+/* BUTTON */
+.btn {
+  margin: 12px;
+  padding: 14px;
   background: #25D366;
   color: white;
-  text-decoration: none;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: bold;
   animation: blink 1s infinite;
 }
 
@@ -94,46 +87,31 @@ body {
   50% {opacity:0.5;}
 }
 
-/* COUNTER */
-.counter {
-  text-align: center;
-  padding: 10px;
+/* SECTION TITLE */
+.section-title {
+  padding: 10px 15px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
-/* SECTION */
-.section {
+/* INFO BOX */
+.info {
+  margin: 10px 15px;
   padding: 15px;
-}
-
-.box {
+  border-radius: 18px;
   background: #111;
   color: white;
-  padding: 12px;
-  border-radius: 15px;
-  margin: 10px 0;
 }
 
-/* SOCIAL */
-.social a {
-  display: block;
-  margin: 8px;
-  padding: 12px;
-  text-align: center;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
+.info h3 {
+  color: gold;
+  margin-bottom: 6px;
+  font-size: 15px;
 }
 
-.telegram { background:#0088cc; }
-.instagram { background:#e1306c; }
-.whatsapp { background:#25D366; }
-
-/* TICKER */
-.ticker {
-  background: red;
-  color: white;
-  padding: 8px;
-  text-align: center;
+.info p {
+  font-size: 13px;
+  color: #ccc;
 }
 </style>
 
@@ -143,63 +121,45 @@ body {
 
 <div class="app">
 
-<div class="topbar">💰 SILVER BOOK 247</div>
-
-<!-- 🔥 LOGO -->
-<div class="logo-box">
-  <img src="https://i.postimg.cc/8P1hYw0V/silver-book.png">
+<!-- TOP -->
+<div class="topbar">
+  <div class="left">
+    <img src="https://i.imgur.com/8Km9tLL.png">
+    <div class="name">💰 SILVER BOOK 247</div>
+  </div>
+  <div>🔗</div>
 </div>
 
 <!-- GAMES -->
 <div class="games">
-<div class="card"><img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317"><p>Teen Patti</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d"><p>Dragon Tiger</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420"><p>Andar Bahar</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f"><p>Poker</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317"></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d"></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420"></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f"></div>
 </div>
 
 <!-- BUTTON -->
-<a href="https://wa.me/+917347607874" class="big-btn">📲 JOIN NOW</a>
+<div class="btn">📲 JOIN NOW</div>
 
-<!-- COUNTER -->
-<div class="counter">
-👥 Users: <span id="users">1523</span> | 🔥 Join: <span id="joins">320</span>
+<!-- SECTION -->
+<div class="section-title">Why Silver Book?</div>
+
+<div class="info">
+<h3>💎 Your Trust, Our Service</h3>
+<p>India’s trusted gaming platform with active users.</p>
 </div>
 
-<!-- TRUST -->
-<div class="section">
-<div class="box">💎 Trusted by 10,000+ users</div>
-<div class="box">⚡ Instant Withdraw</div>
-<div class="box">🏆 Daily Bonus Available</div>
+<div class="info">
+<h3>⚡ Quality Assured</h3>
+<p>Fast deposit & instant withdrawal system.</p>
 </div>
 
-<!-- SOCIAL -->
-<div class="social">
-<a href="https://t.me/silveronline24" class="telegram">Telegram</a>
-<a href="https://www.instagram.com/silve_rbook2025" class="instagram">Instagram</a>
-<a href="https://wa.me/+917347607874" class="whatsapp">WhatsApp</a>
+<div class="info">
+<h3>🏆 Loyalty Program</h3>
+<p>Daily bonus and earning opportunities.</p>
 </div>
 
-<!-- TICKER -->
-<div class="ticker" id="win"></div>
-
 </div>
-
-<script>
-let u=1523,j=320;
-setInterval(()=>{u+=Math.floor(Math.random()*3);j+=Math.floor(Math.random()*2);
-document.getElementById("users").innerText=u;
-document.getElementById("joins").innerText=j;
-},2000);
-
-let n=["Rahul","Aman","Vikas","Rohit"];
-let a=[5000,8000,12000];
-setInterval(()=>{
-let name=n[Math.floor(Math.random()*n.length)];
-let amt=a[Math.floor(Math.random()*a.length)];
-document.getElementById("win").innerText="💰 "+name+" won ₹"+amt;
-},2000);
-</script>
 
 </body>
 </html>
