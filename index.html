@@ -40,6 +40,15 @@ header {
   padding: 20px;
 }
 
+.blink {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%{opacity:1;}
+  50%{opacity:0;}
+  100%{opacity:1;}
+}
+
 .trust {
   color: #00ff99;
 }
@@ -68,16 +77,6 @@ header {
   font-weight: bold;
 }
 
-/* Blinking */
-.blink {
-  animation: blink 1s infinite;
-}
-@keyframes blink {
-  0% {opacity:1;}
-  50% {opacity:0;}
-  100% {opacity:1;}
-}
-
 .join {
   background: gold;
   color: black;
@@ -89,17 +88,68 @@ header {
   border: 1px solid gold;
 }
 
-/* Social */
-.social {
-  margin-top: 20px;
+/* PREMIUM SOCIAL BUTTONS */
+.social-btn {
+  display: block;
+  width: 85%;
+  margin: 12px auto;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
-.social a {
-  display: block;
-  margin: 6px;
-  color: #00ccff;
+/* Colors */
+.telegram {
+  background: linear-gradient(45deg, #0088cc, #00c6ff);
+  box-shadow: 0 0 15px #0088cc;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #e1306c, #ff7a00);
+  box-shadow: 0 0 15px #e1306c;
+}
+
+.whatsapp-btn {
+  background: linear-gradient(45deg, #25D366, #00ff99);
+  box-shadow: 0 0 15px #25D366;
+}
+
+/* Hover */
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Shine */
+.social-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.social-btn:hover::before {
+  left: 100%;
+}
+
+/* WhatsApp floating */
+.whatsapp {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #25D366;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
   text-decoration: none;
-  font-size: 15px;
 }
 
 /* Popup */
@@ -128,18 +178,6 @@ header {
   background: red;
   color: white;
   border: none;
-}
-
-/* WhatsApp */
-.whatsapp {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #25D366;
-  color: white;
-  padding: 14px;
-  border-radius: 50%;
-  text-decoration: none;
 }
 </style>
 
@@ -172,12 +210,10 @@ header {
 <a href="https://wa.me/+917347607874" class="btn join blink">📲 Join Now</a>
 <a href="#" class="btn play">🎯 Play Now</a>
 
-<!-- SOCIAL LINKS -->
-<div class="social">
-<a href="https://t.me/silveronline24">📢 Join Telegram</a>
-<a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==">📸 Follow Instagram</a>
-<a href="https://wa.me/+917347607874">💬 Chat on WhatsApp</a>
-</div>
+<!-- PREMIUM SOCIAL -->
+<a href="https://t.me/silveronline24" class="social-btn telegram">📢 Join Telegram</a>
+<a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==" class="social-btn instagram">📸 Follow Instagram</a>
+<a href="https://wa.me/+917347607874" class="social-btn whatsapp-btn">💬 WhatsApp Chat</a>
 
 </div>
 
@@ -185,7 +221,7 @@ header {
 © 2026 Silver Book
 </footer>
 
-<!-- WhatsApp Floating -->
+<!-- Floating -->
 <a href="https://wa.me/+917347607874" class="whatsapp">💬</a>
 
 <!-- POPUP -->
@@ -200,8 +236,8 @@ header {
 </div>
 
 <script>
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
+function closePopup(){
+document.getElementById("popup").style.display="none";
 }
 </script>
 
