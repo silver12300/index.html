@@ -9,131 +9,120 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#6a11cb,#2575fc);
   color: white;
-  text-align: center;
 }
 
-/* Video */
-video {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+/* TOP BAR */
+.topbar {
+  margin: 15px;
+  padding: 12px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#9d50bb,#6e48aa);
+  display: flex;
+  justify-content: space-between;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.7);
-  min-height: 200vh; /* page bada */
-}
-
-/* HEADER */
-header {
-  padding: 25px;
-  font-size: 30px;
-  font-weight: bold;
-  color: gold;
-  text-shadow: 0 0 10px gold;
-}
-
-/* MOVING TEXT */
-.marquee {
-  background: red;
-  padding: 10px;
-  font-weight: bold;
-  overflow: hidden;
-}
-
-.marquee span {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll 12s linear infinite;
-}
-
-@keyframes scroll {
-  0% {transform: translateX(100%)}
-  100% {transform: translateX(-100%)}
-}
-
-/* Banner */
-.banner {
-  padding: 25px;
-}
-
-.trust {
-  color: #00ff99;
-}
-
-/* Games */
-.games {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+/* MAIN */
+.main {
+  background: #f1f1f1;
+  border-radius: 30px;
+  margin: 10px;
   padding: 15px;
-}
-
-.games img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* Offers */
-.offers {
-  margin: 20px;
-  padding: 20px;
-  background: #111;
-  border-radius: 10px;
-  border: 1px solid gold;
-}
-
-.offers h2 {
-  color: gold;
-}
-
-.offers p {
-  margin: 8px 0;
-}
-
-/* Buttons */
-.btn {
-  display: block;
-  width: 80%;
-  margin: 10px auto;
-  padding: 14px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.join {
-  background: gold;
   color: black;
 }
 
-/* Social Premium */
+/* GAMES */
+.games {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.card p {
+  margin: 8px;
+  font-weight: bold;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 14px;
+  background: gold;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* SECTION */
+.section {
+  padding: 20px;
+}
+
+.section h2 {
+  text-align: center;
+  color: gold;
+}
+
+/* INFO */
+.info-card {
+  background: #111;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+/* OFFERS */
+.offers {
+  background: #111;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+/* SOCIAL */
 .social-btn {
   display: block;
   width: 85%;
-  margin: 12px auto;
-  padding: 14px;
+  margin: 10px auto;
+  padding: 12px;
   border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
+  text-align: center;
   color: white;
+  text-decoration: none;
 }
 
-.telegram { background: #0088cc; }
-.instagram { background: #e1306c; }
-.whatsapp-btn { background: #25D366; }
+.telegram { background:#0088cc; }
+.instagram { background:#e1306c; }
+.whatsapp { background:#25D366; }
 
-/* WhatsApp floating */
-.whatsapp {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #25D366;
-  padding: 14px;
-  border-radius: 50%;
+/* COUNTER */
+.counter {
+  text-align: center;
+  margin: 20px;
+}
+
+/* TICKER */
+.ticker {
+  background: red;
+  padding: 10px;
+  text-align: center;
 }
 </style>
 
@@ -141,58 +130,89 @@ header {
 
 <body>
 
-<video autoplay muted loop>
-<source src="https://www.w3schools.com/howto/rain.mp4">
-</video>
-
-<div class="overlay">
-
-<header>🎰 SILVER BOOK 247 🎰</header>
-
-<!-- MOVING LINE -->
-<div class="marquee">
-<span>
-🔥 Every Deposit 5% Bonus | 🆕 New ID 20% Bonus | 🎯 Refer Bonus 7% | 💸 Loss Commission 2% | 🏏 IPL Special Offers Available 🔥
-</span>
+<div class="topbar">
+  <div>💰 SILVER BOOK 247</div>
+  <div>🔗</div>
 </div>
 
-<div class="banner">
-<h1>India’s Trusted Gaming Platform</h1>
-<p>Play Teen Patti, Andar Bahar & More</p>
-<div class="trust">✔ Instant Withdraw | ✔ 24/7 Support</div>
-</div>
+<div class="main">
 
 <div class="games">
-<img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317">
-<img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d">
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">
-<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f">
+<div class="card"><img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317"><p>Teen Patti</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d"><p>Dragon Tiger</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420"><p>Andar Bahar</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f"><p>Poker</p></div>
+</div>
+
+<a href="https://wa.me/+917347607874" class="btn">📲 Join Now</a>
+
+</div>
+
+<!-- COUNTER -->
+<div class="counter">
+<h3>👥 Users Online: <span id="users">1523</span></h3>
+<h3>🔥 Joined Today: <span id="joins">320</span></h3>
+</div>
+
+<!-- TRUST -->
+<div class="section">
+<h2>Why Choose Us?</h2>
+
+<div class="info-card">
+<h3>💎 Trusted Platform</h3>
+<p>Thousands of users trust us daily.</p>
+</div>
+
+<div class="info-card">
+<h3>⚡ Fast Withdraw</h3>
+<p>Instant deposit & withdrawal system.</p>
+</div>
+
+<div class="info-card">
+<h3>🏆 Daily Earnings</h3>
+<p>Play & earn daily bonuses easily.</p>
+</div>
+
 </div>
 
 <!-- OFFERS -->
 <div class="offers">
-<h2>💰 Today’s Offers</h2>
-<p>✔ Every Deposit Bonus: 5%</p>
-<p>✔ New ID Bonus: 20%</p>
-<p>✔ Refer Bonus: 7%</p>
-<p>✔ Loss Commission: 2%</p>
-<p>✔ IPL Special Bonus Available</p>
+<h2 style="color:gold;">💰 Offers</h2>
+<p>✔ Deposit Bonus 5%</p>
+<p>✔ New ID Bonus 20%</p>
+<p>✔ Refer Bonus 7%</p>
+<p>✔ Loss Commission 2%</p>
+<p>✔ IPL Special Bonus</p>
 </div>
-
-<a href="https://wa.me/+917347607874" class="btn join">📲 Join Now</a>
 
 <!-- SOCIAL -->
-<a href="https://t.me/silveronline24" class="social-btn telegram">📢 Join Telegram</a>
-<a href="https://www.instagram.com/silve_rbook2025" class="social-btn instagram">📸 Follow Instagram</a>
-<a href="https://wa.me/+917347607874" class="social-btn whatsapp-btn">💬 WhatsApp Chat</a>
+<a href="https://t.me/silveronline24" class="social-btn telegram">📢 Telegram</a>
+<a href="https://www.instagram.com/silve_rbook2025" class="social-btn instagram">📸 Instagram</a>
+<a href="https://wa.me/+917347607874" class="social-btn whatsapp">💬 WhatsApp</a>
 
+<!-- WINNING -->
+<div class="ticker">
+<span id="winnerText"></span>
 </div>
 
-<footer style="background:black;padding:10px;">
-© 2026 Silver Book 247
-</footer>
+<script>
+// USERS
+let users = 1523;
+setInterval(()=>{users+=Math.floor(Math.random()*3);document.getElementById("users").innerText=users;},2000);
 
-<a href="https://wa.me/+917347607874" class="whatsapp">💬</a>
+// JOINS
+let joins = 320;
+setInterval(()=>{joins+=Math.floor(Math.random()*2);document.getElementById("joins").innerText=joins;},3000);
+
+// WINNING
+let names=["Rahul","Aman","Vikas","Rohit","Sahil"];
+let amt=[5000,8000,12000,15000];
+setInterval(()=>{
+let n=names[Math.floor(Math.random()*names.length)];
+let a=amt[Math.floor(Math.random()*amt.length)];
+document.getElementById("winnerText").innerText="💰 "+n+" won ₹"+a+" just now!";
+},2000);
+</script>
 
 </body>
 </html>
