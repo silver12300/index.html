@@ -3,195 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silver Book</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<title>Silver Book Casino</title>
 
 <style>
 body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:white;
-  text-align:center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(-45deg, #000, #1a1a1a, #0f2027, #000);
+  background-size: 400% 400%;
+  animation: bg 10s infinite;
 }
 
-/* HEADER */
+@keyframes bg {
+  0% {background-position:0%}
+  50% {background-position:100%}
+  100% {background-position:0%}
+}
+
 header {
-  padding:40px 20px;
-}
-h1 {
-  color:#00e6e6;
-  font-size:40px;
-}
-
-/* CENTER IPL BUTTON */
-.ipl-center a {
-  display:inline-block;
-  margin:15px;
-  padding:18px 30px;
-  font-size:22px;
-  font-weight:bold;
-  color:black;
-  background:linear-gradient(45deg,#ffcc00,#ff6600);
-  border-radius:40px;
-  text-decoration:none;
-  animation: blink 1s infinite;
-  box-shadow:0 0 15px rgba(255,165,0,0.7);
-}
-@keyframes blink {
-  50% { opacity:0.4; }
+  padding: 20px;
+  font-size: 28px;
+  background: black;
+  color: gold;
+  letter-spacing: 2px;
 }
 
-/* SIDE IPL BOX */
-.ipl-box {
-  position:fixed;
-  top:40%;
-  right:0;
-  background:linear-gradient(45deg,#ffcc00,#ff6600);
-  color:black;
-  padding:15px;
-  border-radius:10px 0 0 10px;
-  animation:pulse 1.5s infinite;
-}
-.ipl-box a {
-  display:block;
-  margin-top:8px;
-  background:black;
-  color:#ffcc00;
-  padding:6px;
-  border-radius:6px;
-  text-decoration:none;
-}
-@keyframes pulse {
-  50% { transform:scale(1.05); }
+/* LIVE ticker */
+.ticker {
+  background: red;
+  padding: 10px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/* BUTTONS */
+.ticker span {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {transform: translateX(100%)}
+  100% {transform: translateX(-100%)}
+}
+
+.banner h1 {
+  color: gold;
+  font-size: 30px;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.games img {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px gold;
+  transition: 0.3s;
+}
+
+.games img:hover {
+  transform: scale(1.1);
+}
+
 .btn {
-  display:block;
-  margin:12px auto;
-  padding:14px;
-  width:80%;
-  max-width:300px;
-  border-radius:25px;
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-}
-.whatsapp { background:#25D366; }
-.telegram { background:#0088cc; }
-.instagram { background:#E1306C; }
-
-/* CARD */
-.card {
-  background:#1e293b;
-  margin:20px;
-  padding:20px;
-  border-radius:15px;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  background: gold;
+  box-shadow: 0 0 15px gold;
+  transition: 0.3s;
 }
 
-/* IMAGES */
-.images {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-}
-.images img {
-  width:30%;
-  min-width:100px;
-  border-radius:10px;
+.btn:hover {
+  background: orange;
 }
 
-/* POPUP */
-.popup {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#111;
-  padding:15px;
-  border-radius:10px;
-  display:none;
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-.popup a {
-  display:block;
-  margin-top:10px;
-  background:#25D366;
-  padding:8px;
-  border-radius:6px;
-  color:white;
-  text-decoration:none;
+footer {
+  background: black;
+  padding: 10px;
 }
 
-/* MOBILE */
-@media(max-width:600px){
-  .images img { width:90%; }
+/* WhatsApp pulse */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {box-shadow:0 0 5px green;}
+  50% {box-shadow:0 0 20px green;}
+  100% {box-shadow:0 0 5px green;}
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- SIDE IPL -->
-<div class="ipl-box">
-  🏏 IPL OFFER
-  <a href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID">Get ID</a>
-</div>
-
 <header>
-  <h1>Silver Book</h1>
-  <p>🎁 20% Bonus • 💰 5% Deposit Bonus</p>
+🎰 SILVER BOOK CASINO 🎰
 </header>
 
-<!-- CENTER IPL BUTTON -->
-<div class="ipl-center">
-  <a href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID">
-    🏏 GET IPL ID NOW
-  </a>
+<div class="ticker">
+<span>🔥 Rahul won ₹15,000 | Aman won ₹8,500 | Vikram won ₹22,000 | Join Now & Win Big 💰</span>
 </div>
 
-<!-- SOCIAL BUTTONS -->
-<div class="card">
-  <a class="btn whatsapp" href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID">Join WhatsApp</a>
-  <a class="btn telegram" href="https://t.me/silveronline24">Join Telegram</a>
-  <a class="btn instagram" href="https://www.instagram.com/silve_rbook2025">Instagram</a>
+<div class="banner">
+<h1>India No.1 Gaming Platform</h1>
+<p>Play Teen Patti, Andar Bahar, Slots & More</p>
+<p style="color:lightgreen;">✔ Trusted by 10,000+ Players | Instant Withdrawal 💸</p>
 </div>
 
-<!-- CASINO IMAGES -->
-<div class="card">
-  <h3>🎰 Casino Experience</h3>
-  <div class="images">
-    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">
-    <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317">
-    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f">
-  </div>
+<div class="games">
+<img src="https://i.imgur.com/3ZQ3ZQn.jpg">
+<img src="https://i.imgur.com/Vz7FZ7R.jpg">
+<img src="https://i.imgur.com/Qr71crq.jpg">
+<img src="https://i.imgur.com/xX4Q7pF.jpg">
 </div>
 
-<!-- POPUP -->
-<div id="popup" class="popup">
-  <p>🏏 IPL ID chahiye?</p>
-  <a href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID">
-    Get IPL ID Now
-  </a>
-</div>
+<a href="https://wa.me/917347607874" class="btn">📲 Join Now</a>
+<a href="#" class="btn">🎯 Play Now</a>
 
-<p style="font-size:13px; color:#aaa;">
-⚠️ 18+ Only. Play responsibly.
-</p>
+<footer>
+© 2026 Silver Book
+</footer>
 
-<script>
-// POPUP AFTER 3 SEC
-setTimeout(()=>{
-  document.getElementById("popup").style.display="block";
-},3000);
-
-/* OPTIONAL AUTO REDIRECT (uncomment if needed) */
-// setTimeout(()=>{
-//   window.location.href="https://wa.me/917347607874?text=Hello%20I%20want%20IPL%20ID";
-// },8000);
-</script>
+<a href="https://wa.me/919876543210" class="whatsapp">💬</a>
 
 </body>
 </html>
