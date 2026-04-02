@@ -16,32 +16,25 @@ body {
     text-align:center;
 }
 
-/* HEADER */
 h1 {
     color: gold;
     font-size: 42px;
-    margin-top:20px;
     text-shadow:0 0 10px gold;
 }
 
-/* CARD */
 .card {
     background:#111;
     margin:20px;
     padding:20px;
     border-radius:15px;
-    box-shadow:0 0 20px rgba(255,255,255,0.1);
 }
 
-/* OFFER TEXT */
 .offer {
     font-size: 22px;
     color:#00ffcc;
-    margin:10px 0;
     font-weight:bold;
 }
 
-/* BUTTONS */
 .btn {
     display:block;
     width:85%;
@@ -51,32 +44,36 @@ h1 {
     font-size:18px;
     text-decoration:none;
     color:white;
-    transition:0.3s;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* COLORS */
 .whatsapp {
     background:#25D366;
     animation: blink 1s infinite;
 }
 
-.telegram {
-    background:#0088cc;
-}
-
+.telegram { background:#0088cc; }
 .insta {
-    background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 }
 
-/* BLINK */
 @keyframes blink {
     0% {opacity:1;}
     50% {opacity:0.4;}
     100% {opacity:1;}
+}
+
+/* LIVE USERS */
+.live {
+    color:#0f0;
+    font-size:18px;
+}
+
+/* TRUST */
+.trust {
+    background:#000;
+    padding:20px;
+    font-size:14px;
+    color:#ccc;
 }
 
 /* POPUP */
@@ -90,32 +87,31 @@ h1 {
     display:flex;
     justify-content:center;
     align-items:center;
-    animation: fadeIn 1s;
 }
 
 .popup-box {
     background:#111;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 0 25px gold;
 }
 
 .close {
-    margin-top:10px;
-    padding:10px 20px;
     background:red;
+    padding:10px;
     border:none;
     color:white;
-    cursor:pointer;
-    border-radius:8px;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity:0;}
-    to {opacity:1;}
+/* FAKE NOTIFICATION */
+.notify {
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    background:#111;
+    padding:10px;
+    border-radius:10px;
+    display:none;
 }
-
 </style>
 </head>
 
@@ -123,34 +119,71 @@ h1 {
 
 <h1>🔥 SILVER BOOK 🔥</h1>
 
-<div class="card">
-    <div class="offer">🎯 IPL NEW ID AVAILABLE</div>
-    <div class="offer">💰 20% BONUS + 5% DAILY</div>
+<div class="live">👥 <span id="users"></span> Users Online</div>
 
-    <a href="https://wa.me/+917347607874" class="btn whatsapp">💬 Join WhatsApp</a>
-    <a href="https://t.me/silveronline24" class="btn telegram">📢 Join Telegram</a>
-    <a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==" class="btn insta">📸 Follow Instagram</a>
+<div class="card">
+<div class="offer">🎯 IPL NEW ID</div>
+<div class="offer">💰 20% BONUS + 5% DAILY</div>
+
+<a href="https://wa.me/+917347607874" class="btn whatsapp">💬 Join WhatsApp</a>
+<a href="https://t.me/silveronline24" class="btn telegram">📢 Telegram</a>
+<a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==" class="btn insta">📸 Instagram</a>
+</div>
+
+<div class="trust">
+✔️ India’s Trusted Platform <br>
+✔️ Fast Withdrawal <br>
+✔️ 24/7 Support <br><br>
+
+🔥 100% Guarantee <br><br>
+
+⚠️ 18+ Only <br>
+⚠️ Play Responsibly
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-    <div class="popup-box">
-        <h2>🔥 SILVER BOOK IPL ID</h2>
-        <p>Get your ID instantly!</p>
-        <a href="https://wa.me/+917347607874" class="btn whatsapp">Join Now</a>
-        <button class="close" onclick="closePopup()">Close</button>
-    </div>
+<div class="popup-box">
+<h2>🔥 Get IPL ID</h2>
+<a href="https://wa.me/+917347607874" class="btn whatsapp">Join Now</a>
+<button class="close" onclick="closePopup()">Close</button>
+</div>
 </div>
 
+<!-- FAKE NOTIFY -->
+<div class="notify" id="notify"></div>
+
 <script>
-// Auto popup close after 5 sec
-setTimeout(() => {
-    document.getElementById("popup").style.display="none";
-}, 5000);
+// LIVE USERS
+setInterval(()=>{
+document.getElementById("users").innerText = Math.floor(Math.random()*100)+50;
+},2000);
+
+// POPUP CLOSE
+setTimeout(()=>{
+document.getElementById("popup").style.display="none";
+},5000);
 
 function closePopup(){
-    document.getElementById("popup").style.display="none";
+document.getElementById("popup").style.display="none";
 }
+
+// AUTO REDIRECT (after 15 sec)
+setTimeout(()=>{
+window.location.href="https://wa.me/+917347607874";
+},15000);
+
+// FAKE NOTIFICATION
+let names=["Rahul","Aman","Sandeep","Rohit","Vikas"];
+setInterval(()=>{
+let name = names[Math.floor(Math.random()*names.length)];
+let box = document.getElementById("notify");
+box.innerText = name + " joined via WhatsApp";
+box.style.display="block";
+
+setTimeout(()=>{box.style.display="none";},3000);
+},5000);
+
 </script>
 
 </body>
