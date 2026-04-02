@@ -1,74 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Silver Book 247</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #c0c0c0;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #000;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-    .main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .main h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .main p {
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto 20px auto;
-    }
-    footer {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Book</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(135deg,#000,#1a1a1a);
+    color:white;
+    text-align:center;
+}
+
+/* HEADER */
+h1 {
+    color: gold;
+    font-size: 42px;
+    margin-top:20px;
+    text-shadow:0 0 10px gold;
+}
+
+/* CARD */
+.card {
+    background:#111;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+
+/* OFFER TEXT */
+.offer {
+    font-size: 22px;
+    color:#00ffcc;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+/* BUTTONS */
+.btn {
+    display:block;
+    width:85%;
+    margin:15px auto;
+    padding:15px;
+    border-radius:12px;
+    font-size:18px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* COLORS */
+.whatsapp {
+    background:#25D366;
+    animation: blink 1s infinite;
+}
+
+.telegram {
+    background:#0088cc;
+}
+
+.insta {
+    background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+/* BLINK */
+@keyframes blink {
+    0% {opacity:1;}
+    50% {opacity:0.4;}
+    100% {opacity:1;}
+}
+
+/* POPUP */
+.popup {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation: fadeIn 1s;
+}
+
+.popup-box {
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 25px gold;
+}
+
+.close {
+    margin-top:10px;
+    padding:10px 20px;
+    background:red;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Silver Book 247</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Games</a>
-      <a href="#">Offers</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
 
-  <div class="main">
-    <h2>India's No.1 Gaming Platform</h2>
-    <p>Join Silver Book 247 to enjoy the best online gaming experience. Play, win, and have fun anytime!</p>
-    <p>Sign up today and claim your exclusive bonuses.</p>
-  </div>
+<h1>🔥 SILVER BOOK 🔥</h1>
 
-  <footer>
-    <p>© 2026 Silver Book 247. All rights reserved.</p>
-  </footer>
+<div class="card">
+    <div class="offer">🎯 IPL NEW ID AVAILABLE</div>
+    <div class="offer">💰 20% BONUS + 5% DAILY</div>
+
+    <a href="https://wa.me/+917347607874" class="btn whatsapp">💬 Join WhatsApp</a>
+    <a href="https://t.me/silveronline24" class="btn telegram">📢 Join Telegram</a>
+    <a href="https://www.instagram.com/silve_rbook2025?igsh=MWhvOGRwM2RjYXFzdA==" class="btn insta">📸 Follow Instagram</a>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+        <h2>🔥 SILVER BOOK IPL ID</h2>
+        <p>Get your ID instantly!</p>
+        <a href="https://wa.me/+917347607874" class="btn whatsapp">Join Now</a>
+        <button class="close" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+// Auto popup close after 5 sec
+setTimeout(() => {
+    document.getElementById("popup").style.display="none";
+}, 5000);
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+
 </body>
 </html>
